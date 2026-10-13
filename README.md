@@ -1,2 +1,2 @@
 # zadora
-ADORA – Food &amp; Rewards Marketplace
+ZADORA – Food &amp; Rewards Marketplace
