@@ -956,6 +956,208 @@
     font-size: 30px;
   }
 }
+    /* ZADORA Food Card Polish */
+.food-card {
+  border: 1px solid #CDE8E3;
+  border-radius: 18px;
+  background: #FFFFFF;
+  box-shadow: 0 5px 18px rgba(16, 59, 54, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(16, 59, 54, 0.12);
+}
+
+.food-image {
+  background: #D4F3EF;
+  min-height: 145px;
+}
+
+.food-emoji {
+  font-size: 66px;
+  filter: drop-shadow(0 5px 4px rgba(16, 59, 54, 0.10));
+}
+
+.food-info {
+  padding: 14px;
+}
+
+.food-info h3 {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.food-info p {
+  line-height: 1.5;
+}
+
+.food-price {
+  color: #103B36;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.add-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: #103B36;
+  color: #FFFFFF;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+  background: #45D6C3;
+  color: #103B36;
+  transform: scale(1.06);
+}
+
+@media (max-width: 700px) {
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .food-image {
+    min-height: 112px;
+  }
+
+  .food-emoji {
+    font-size: 52px;
+  }
+
+  .food-info {
+    padding: 10px;
+  }
+}
+    /* ZADORA Offers Section */
+#offers {
+  background: #D4F3EF !important;
+}
+
+#offers .section-heading {
+  margin-bottom: 30px;
+}
+
+#offers .offer-grid {
+  gap: 16px;
+}
+
+#offers .offer-card {
+  position: relative;
+  min-height: 205px;
+  padding: 22px 18px;
+  border: 1px solid #C4E8E1;
+  border-radius: 20px;
+  background: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(16, 59, 54, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#offers .offer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(16, 59, 54, 0.10);
+}
+
+#offers .offer-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: #D4F3EF;
+  font-size: 27px;
+}
+
+#offers .offer-label {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #E8FAF8;
+  color: #167D70;
+  font-size: 9px;
+  letter-spacing: 0.8px;
+}
+
+#offers .offer-card h3 {
+  margin: 12px 0 7px;
+  font-size: 19px;
+}
+
+#offers .offer-card p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#offers .text-link {
+  display: inline-block;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #45D6C3;
+}
+
+@media (max-width: 700px) {
+  #offers .offer-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  #offers .offer-card {
+    min-height: auto;
+    padding: 17px;
+    gap: 12px;
+  }
+
+  #offers .offer-card h3 {
+    margin-top: 9px;
+  }
+}
+    /* ZADORA Rewards Section */
+#rewards {
+  background: #E8FAF8;
+}
+
+#rewards .rewards-panel {
+  border: 1px solid #CDE8E3;
+  border-radius: 24px;
+  background: #FFFFFF;
+  box-shadow: 0 12px 30px rgba(16, 59, 54, 0.07);
+  overflow: hidden;
+}
+
+#rewards .rewards-art {
+  border-radius: 20px;
+  background: #D4F3EF;
+}
+
+#rewards h2 {
+  color: #103B36;
+}
+
+#rewards p {
+  color: #71817B;
+  line-height: 1.7;
+}
+
+#rewards .btn {
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+#rewards .btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+  #rewards .rewards-panel {
+    border-radius: 18px;
+    padding: 18px;
+    gap: 18px;
+  }
+
+  #rewards .rewards-art {
+    border-radius: 16px;
+  }
+}
   </style>
 </head>
 <body>
