@@ -691,6 +691,196 @@
       visibility: visible;
       transform: translateY(0);
     }
+    /* ZADORA: mobile food marketplace layout */
+.section {
+  background-color: #E8FAF8;
+}
+
+#offers,
+#how-it-works {
+  background: #D4F3EF !important;
+}
+
+.food-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.food-image {
+  min-height: 145px;
+  background: #D4F3EF;
+}
+
+.food-emoji {
+  font-size: 68px;
+}
+
+.food-card {
+  background: #FFFFFF;
+  border-color: #CDE8E3;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-inner {
+    min-height: 66px;
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .brand-caption {
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .hero {
+    padding: 38px 0 44px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(37px, 10vw, 48px);
+    letter-spacing: -1px;
+  }
+
+  .hero-art {
+    min-height: 270px;
+  }
+
+  .hero-circle {
+    width: 230px;
+  }
+
+  .hero-food {
+    font-size: 125px;
+  }
+
+  .floating-card-one {
+    right: 0;
+    top: 10px;
+  }
+
+  .floating-card-two {
+    left: 0;
+    bottom: 10px;
+  }
+
+  .section {
+    padding: 42px 0;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .food-image {
+    min-height: 112px;
+  }
+
+  .food-emoji {
+    font-size: 54px;
+  }
+
+  .food-tag {
+    top: 7px;
+    left: 7px;
+    padding: 4px 7px;
+    font-size: 9px;
+  }
+
+  .food-info {
+    padding: 10px;
+  }
+
+  .food-info h3 {
+    font-size: 14px;
+  }
+
+  .food-info p {
+    font-size: 11px;
+    min-height: 35px;
+  }
+
+  .food-price {
+    font-size: 14px;
+  }
+
+  .add-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .search-panel {
+    gap: 7px;
+  }
+
+  .search-panel > .btn {
+    padding-inline: 11px;
+  }
+
+  .category-list {
+    gap: 7px;
+  }
+
+  .category-btn {
+    padding: 7px 11px;
+    font-size: 12px;
+  }
+
+  .offer-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .offer-card {
+    padding: 17px;
+  }
+
+  .rewards-panel {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 12px;
+  }
+
+  .rewards-art {
+    min-height: 130px;
+    font-size: 78px;
+  }
+
+  .footer-main,
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
   </style>
 </head>
 <body>
