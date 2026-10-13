@@ -1,0 +1,492 @@
+                ✦ How rewards work
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="food-circle">
+              <span>🍔</span>
+            </div>
+            <div class="floating-label label-top">
+              ✦ ZADORA Rewards
+              <small>More visits, more perks</small>
+            </div>
+            <div class="floating-label label-bottom">
+              ♡ Made for food lovers
+              <small>Discover your next favorite</small>
+            </div>
+          </div>
+        </div>
+
+        <form class="search-box" id="searchForm">
+          <span class="search-symbol">⌕</span>
+          <input id="foodSearch" type="search"
+            placeholder="Search food or restaurant..."
+            aria-label="Search food or restaurant">
+          <button class="search-button" type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Explore your cravings</div>
+          <h2>What are you in the mood for?</h2>
+          <p class="section-description">
+            Pick a category to find something delicious.
+          </p>
+        </div>
+
+        <div class="category-grid" id="categoryGrid">
+          <button class="category-card active" data-category="all">
+            <span class="category-icon">🍽️</span>
+            <span class="category-name">All Food</span>
+          </button>
+          <button class="category-card" data-category="burger">
+            <span class="category-icon">🍔</span>
+            <span class="category-name">Burgers</span>
+          </button>
+          <button class="category-card" data-category="fatira">
+            <span class="category-icon">🫓</span>
+            <span class="category-name">Fatira</span>
+          </button>
+          <button class="category-card" data-category="sandwich">
+            <span class="category-icon">🥪</span>
+            <span class="category-name">Sandwiches</span>
+          </button>
+          <button class="category-card" data-category="drinks">
+            <span class="category-icon">🧃</span>
+            <span class="category-name">Drinks</span>
+          </button>
+          <button class="category-card" data-category="sides">
+            <span class="category-icon">🍟</span>
+            <span class="category-name">Sides</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOD -->
+    <section class="section" id="explore">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Popular picks</div>
+          <h2>Something delicious awaits</h2>
+          <p class="section-description">
+            Sample listings for the ZADORA marketplace preview.
+          </p>
+        </div>
+
+        <div class="food-grid" id="foodGrid">
+
+          <article class="food-card"
+            data-category="burger"
+            data-search="classic beef burger">
+            <div class="food-image">
+              <span class="food-tag">BEST SELLER</span>
+              <span class="food-emoji">🍔</span>
+            </div>
+            <div class="food-details">
+              <div class="food-title-row">
+                <span class="food-name">Classic Beef Burger</span>
+                <span class="food-rating">★ 4.8</span>
+              </div>
+              <div class="food-meta">Burgers · Demo restaurant</div>
+              <div class="food-bottom">
+                <span class="food-price">SAR 18</span>
+                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View burger">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card"
+            data-category="fatira"
+            data-search="cheese fatira flatbread">
+            <div class="food-image">
+              <span class="food-tag">LOCAL FAVORITE</span>
+              <span class="food-emoji">🫓</span>
+            </div>
+            <div class="food-details">
+              <div class="food-title-row">
+                <span class="food-name">Cheese Fatira</span>
+                <span class="food-rating">★ 4.7</span>
+              </div>
+              <div class="food-meta">Fatira · Demo restaurant</div>
+              <div class="food-bottom">
+                <span class="food-price">SAR 8</span>
+                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View fatira">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card"
+            data-category="sandwich"
+            data-search="grilled chicken sandwich">
+            <div class="food-image" style="background:linear-gradient(135deg,#e6f5d7,#bfe2a4)">
+              <span class="food-tag">FRESH PICK</span>
+              <span class="food-emoji">🥪</span>
+            </div>
+            <div class="food-details">
+              <div class="food-title-row">
+                <span class="food-name">Chicken Sandwich</span>
+                <span class="food-rating">★ 4.6</span>
+              </div>
+              <div class="food-meta">Sandwiches · Demo restaurant</div>
+              <div class="food-bottom">
+                <span class="food-price">SAR 14</span>
+                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View sandwich">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card"
+            data-category="drinks"
+            data-search="fresh orange juice">
+            <div class="food-image" style="background:linear-gradient(135deg,#fff1cf,#ffc875)">
+              <span class="food-tag">FRESH DAILY</span>
+              <span class="food-emoji">🍹</span>
+            </div>
+            <div class="food-details">
+              <div class="food-title-row">
+                <span class="food-name">Fresh Orange Juice</span>
+                <span class="food-rating">★ 4.9</span>
+              </div>
+              <div class="food-meta">Drinks · Demo restaurant</div>
+              <div class="food-bottom">
+                <span class="food-price">SAR 7</span>
+                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View juice">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card"
+            data-category="sides"
+            data-search="crispy french fries">
+            <div class="food-image" style="background:linear-gradient(135deg,#fff2c9,#f5cf71)">
+              <span class="food-emoji">🍟</span>
+            </div>
+            <div class="food-details">
+              <div class="food-title-row">
+                <span class="food-name">French Fries</span>
+                <span class="food-rating">★ 4.5</span>
+              </div>
+              <div class="food-meta">Sides · Demo restaurant</div>
+              <div class="food-bottom">
+                <span class="food-price">SAR 6</span>
+                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View fries">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card"
+            data-category="burger"
+            data-search="crispy chicken burger">
+            <div class="food-image" style="background:linear-gradient(135deg,#ffe2d4,#f5b6a0)">
+              <span class="food-emoji">🍗</span>
+            </div>
+            <div class="food-details">
+              <div class="food-title-row">
+                <span class="food-name">Chicken Burger</span>
+                <span class="food-rating">★ 4.7</span>
+              </div>
+              <div class="food-meta">Burgers · Demo restaurant</div>
+              <div class="food-bottom">
+                <span class="food-price">SAR 16</span>
+                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View chicken burger">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card"
+            data-category="drinks"
+            data-search="iced coffee">
+            <div class="food-image" style="background:linear-gradient(135deg,#e8dfd7,#c4a99a)">
+              <span class="food-emoji">🧋</span>
+            </div>
+            <div class="food-details">
+              <div class="food-title-row">
+                <span class="food-name">Iced Coffee</span>
+                <span class="food-rating">★ 4.6</span>
+              </div>
+              <div class="food-meta">Drinks · Demo restaurant</div>
+              <div class="food-bottom">
+                <span class="food-price">SAR 10</span>
+                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View iced coffee">+</button>
+              </div>
+            </div>
+          </article>
+
+          <div class="empty-message" id="emptyMessage">
+            No matching items found. Try another search.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFERS -->
+    <section class="section" id="offers">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">A little extra joy</div>
+          <h2>Offers made for you</h2>
+          <p class="section-description">
+            A preview of the promotions area.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <article class="offer-card">
+            <div class="offer-content">
+              <div class="offer-label">✦ ZADORA WELCOME</div>
+              <h3>Your next favorite is waiting.</h3>
+              <p>Explore local food spots and discover something new.</p>
+              <button class="offer-button" data-message="Offers will be managed after the marketplace backend is ready.">
+                Explore marketplace ↗
+              </button>
+            </div>
+            <span class="offer-emoji">🥙</span>
+          </article>
+
+          <article class="offer-card gold">
+            <div class="offer-content">
+              <div class="offer-label">★ REWARDS PREVIEW</div>
+              <h3>Every order brings you closer.</h3>
+              <p>Points, coupons and member offers are planned for the future.</p>
+              <button class="offer-button" data-message="The rewards program is a design preview and is not active yet.">
+                Discover rewards ↗
+              </button>
+            </div>
+            <span class="offer-emoji">🎁</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REWARDS -->
+    <section class="section" id="rewards">
+      <div class="container">
+        <div class="rewards-panel">
+          <div>
+            <div class="section-label" style="color:#82f0dc">
+              A tastier kind of loyalty
+            </div>
+            <h2>Good food. Great rewards.</h2>
+            <p>
+              ZADORA Rewards is planned to bring points, coupons,
+              referral perks and member-only offers into one experience.
+            </p>
+            <a class="primary-button" href="#how-it-works">
+              See how it works ↗
+            </a>
+          </div>
+          <div class="reward-coin" aria-hidden="true">✦</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Simple by design</div>
+          <h2>Your food journey in three steps</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">01</div>
+            <h3>Discover</h3>
+            <p>Explore food categories and local restaurants in one place.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">02</div>
+            <h3>Choose your favorite</h3>
+            <p>Browse sample menus and find something you love.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">03</div>
+            <h3>Earn rewards</h3>
+            <p>A future points system will make eligible orders more rewarding.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a class="brand" href="#home">
+            <span class="brand-mark">Z</span>
+            <span>
+              <span class="brand-name">ZADORA</span>
+              <span class="brand-caption">FOOD • DEALS • REWARDS</span>
+            </span>
+          </a>
+          <p class="footer-note">
+            Discover local food, explore offers and enjoy a new
+            rewards experience. This preview uses sample content
+            while the marketplace is being developed.
+          </p>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#explore">Explore</a>
+          <a href="#offers">Offers</a>
+          <a href="#rewards">Rewards</a>
+        </nav>
+      </div>
+
+      <div class="copyright">
+        © <span id="currentYear"></span> ZADORA.
+        Marketplace preview — sample content only.
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE NAVIGATION -->
+  <nav class="mobile-navigation" aria-label="Mobile navigation">
+    <a class="active" href="#home">
+      <span>⌂</span><span>Home</span>
+    </a>
+    <a href="#explore">
+      <span>⌕</span><span>Explore</span>
+    </a>
+    <a href="#offers">
+      <span>♡</span><span>Offers</span>
+    </a>
+    <a href="#rewards">
+      <span>✦</span><span>Rewards</span>
+    </a>
+    <a href="#profile" id="profileButton">
+      <span>◉</span><span>Profile</span>
+    </a>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    (() => {
+      const $ = (selector, root = document) =>
+        root.querySelector(selector);
+
+      const $$ = (selector, root = document) =>
+        [...root.querySelectorAll(selector)];
+
+      const toast = $("#toast");
+      let toastTimer;
+      let activeCategory = "all";
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add("show");
+
+        clearTimeout(toastTimer);
+
+        toastTimer = setTimeout(() => {
+          toast.classList.remove("show");
+        }, 3000);
+      }
+
+      function filterFoods() {
+        const query = $("#foodSearch").value
+          .trim()
+          .toLowerCase();
+
+        let visibleCount = 0;
+
+        $$(".food-card").forEach(card => {
+          const categoryMatches =
+            activeCategory === "all" ||
+            card.dataset.category === activeCategory;
+
+          const searchableText = (
+            card.dataset.search + " " + card.innerText
+          ).toLowerCase();
+
+          const searchMatches =
+            query === "" || searchableText.includes(query);
+
+          const show = categoryMatches && searchMatches;
+
+          card.style.display = show ? "" : "none";
+
+          if (show) visibleCount++;
+        });
+
+        $("#emptyMessage").style.display =
+          visibleCount ? "none" : "block";
+      }
+
+      $("#categoryGrid").addEventListener("click", event => {
+        const button = event.target.closest("[data-category]");
+
+        if (!button) return;
+
+        activeCategory = button.dataset.category;
+
+        $$(".category-card").forEach(card => {
+          card.classList.toggle("active", card === button);
+        });
+
+        filterFoods();
+      });
+
+      $("#searchForm").addEventListener("submit", event => {
+        event.preventDefault();
+        filterFoods();
+
+        $("#explore").scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      });
+
+      $("#foodSearch").addEventListener("input", filterFoods);
+
+      document.addEventListener("click", event => {
+        const button = event.target.closest("[data-message]");
+
+        if (!button) return;
+
+        event.preventDefault();
+        showToast(button.dataset.message);
+      });
+
+      $("#languageButton").addEventListener("click", () => {
+        showToast(
+          "Arabic interface is planned for a future update. The current preview is in English."
+        );
+      });
+
+      $("#profileButton").addEventListener("click", event => {
+        event.preventDefault();
+
+        showToast(
+          "Customer profile will be enabled after login and backend setup."
+        );
+      });
+
+      $$(".mobile-navigation a").forEach(link => {
+        link.addEventListener("click", () => {
+          $$(".mobile-navigation a").forEach(item => {
+            item.classList.toggle("active", item === link);
+          });
+        });
+      });
+
+      $("#currentYear").textContent = new Date().getFullYear();
+
+      filterFoods();
+    })();
+  </script>
+</body>
+</html>
