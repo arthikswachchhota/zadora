@@ -1,486 +1,1154 @@
-                ✦ How rewards work
-              </a>
-            </div>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#103b36">
+  <meta name="description" content="ZADORA — Discover food, explore offers and enjoy rewards.">
+  <title>ZADORA – Food &amp; Rewards Marketplace</title>
 
-          <div class="hero-visual">
-            <div class="food-circle">
-              <span>🍔</span>
-            </div>
-            <div class="floating-label label-top">
-              ✦ ZADORA Rewards
-              <small>More visits, more perks</small>
-            </div>
-            <div class="floating-label label-bottom">
-              ♡ Made for food lovers
-              <small>Discover your next favorite</small>
-            </div>
-          </div>
-        </div>
+  <style>
+    :root {
+      --green: #103b36;
+      --green-light: #1d554b;
+      --cyan: #45d6c3;
+      --cream: #fffaf0;
+      --white: #ffffff;
+      --text: #19332f;
+      --muted: #71817b;
+      --orange: #ffb85c;
+      --border: #e8eee8;
+      --shadow: 0 12px 35px rgba(16, 59, 54, 0.08);
+    }
 
-        <form class="search-box" id="searchForm">
-          <span class="search-symbol">⌕</span>
-          <input id="foodSearch" type="search"
-            placeholder="Search food or restaurant..."
-            aria-label="Search food or restaurant">
-          <button class="search-button" type="submit">Search</button>
-        </form>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .announcement {
+      padding: 9px 12px;
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .announcement strong {
+      color: var(--cyan);
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--green);
+      color: var(--cyan);
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .brand-name {
+      color: var(--green);
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    .brand-caption {
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--green-light);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .btn {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 17px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-light);
+    }
+
+    .btn-light {
+      background: var(--white);
+      color: var(--green);
+      border-color: var(--border);
+    }
+
+    .btn-cyan {
+      background: var(--cyan);
+      color: var(--green);
+    }
+
+    .language-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .hero {
+      overflow: hidden;
+      background: var(--cream);
+      padding: 66px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 30px;
+      background: #e3f8f2;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .hero h1 {
+      max-width: 620px;
+      margin: 20px 0 16px;
+      color: var(--green);
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: #159e8d;
+    }
+
+    .hero-description {
+      max-width: 510px;
+      margin: 0 0 25px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 350px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-circle {
+      width: min(330px, 85%);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 20px 60px rgba(21, 158, 141, 0.18);
+    }
+
+    .hero-food {
+      font-size: clamp(115px, 17vw, 190px);
+      filter: drop-shadow(0 18px 12px rgba(16, 59, 54, 0.15));
+    }
+
+    .floating-card {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card strong {
+      display: block;
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .floating-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .floating-card-one {
+      top: 25px;
+      right: 0;
+    }
+
+    .floating-card-two {
+      bottom: 30px;
+      left: 0;
+    }
+
+    .floating-icon {
+      font-size: 27px;
+    }
+
+    .section {
+      padding: 68px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--green);
+      font-size: clamp(27px, 3vw, 36px);
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .text-link {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .search-panel {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .search-input-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      padding: 0 15px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--white);
+    }
+
+    .search-input-wrap span {
+      font-size: 20px;
+    }
+
+    .search-input-wrap input {
+      width: 100%;
+      min-width: 0;
+      min-height: 48px;
+      border: 0;
+      outline: none;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .search-input-wrap:focus-within {
+      border-color: #159e8d;
+      box-shadow: 0 0 0 3px rgba(21, 158, 141, 0.1);
+    }
+
+    .category-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 28px;
+    }
+
+    .category-btn {
+      min-height: 39px;
+      padding: 8px 15px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: var(--white);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .category-btn.active,
+    .category-btn:hover {
+      border-color: var(--green);
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .food-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--white);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .food-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .food-image {
+      position: relative;
+      min-height: 155px;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+    }
+
+    .food-emoji {
+      font-size: 76px;
+      line-height: 1.2;
+    }
+
+    .food-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 5px 9px;
+      border-radius: 20px;
+      background: var(--white);
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .food-info {
+      padding: 15px;
+    }
+
+    .food-info h3 {
+      margin: 0 0 5px;
+      color: var(--green);
+      font-size: 16px;
+    }
+
+    .food-info p {
+      min-height: 38px;
+      margin: 0 0 13px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .food-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .food-price {
+      color: var(--green);
+      font-size: 17px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .add-btn {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      border: 0;
+      border-radius: 11px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 23px;
+    }
+
+    .add-btn:hover {
+      background: var(--green-light);
+    }
+
+    .empty-state {
+      display: none;
+      padding: 35px 15px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .offer-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--white);
+    }
+
+    .offer-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 15px;
+      background: var(--cream);
+      font-size: 29px;
+    }
+
+    .offer-label {
+      color: #159e8d;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .offer-card h3 {
+      margin: 6px 0;
+      color: var(--green);
+      font-size: 19px;
+    }
+
+    .offer-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .rewards-panel {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      align-items: center;
+      gap: 25px;
+      overflow: hidden;
+      padding: 40px;
+      border-radius: 24px;
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .rewards-content h2 {
+      margin: 17px 0 12px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+    }
+
+    .rewards-content p {
+      max-width: 560px;
+      margin: 0 0 22px;
+      color: #d0e1dc;
+      font-size: 15px;
+    }
+
+    .rewards-art {
+      display: grid;
+      place-items: center;
+      min-height: 180px;
+      border-radius: 50%;
+      background: rgba(69, 214, 195, 0.13);
+      font-size: 110px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .step-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--white);
+    }
+
+    .step-number {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 13px;
+      background: #e3f8f2;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .step-card h3 {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 18px;
+    }
+
+    .step-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      padding: 42px 0 20px;
+      background: #0b2d29;
+      color: var(--white);
+    }
+
+    .footer-main {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 30px;
+      padding-bottom: 28px;
+    }
+
+    .footer .brand-name {
+      color: var(--white);
+    }
+
+    .footer .brand-caption {
+      color: #b9d0ca;
+    }
+
+    .footer-description {
+      max-width: 370px;
+      margin: 15px 0 0;
+      color: #b9d0ca;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #e1eeea;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      color: #b9d0ca;
+      font-size: 12px;
+    }
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 100;
+      max-width: calc(100% - 40px);
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: var(--green);
+      color: var(--white);
+      box-shadow: var(--shadow);
+      font-size: 14px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement">
+    Discover delicious food and <strong>unlock exciting rewards!</strong>
+  </div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="ZADORA Home">
+        <span class="brand-mark">Z</span>
+        <span>
+          <span class="brand-name">ZADORA</span>
+          <span class="brand-caption">FOOD &amp; REWARDS MARKETPLACE</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#explore">Explore Food</a>
+        <a href="#offers">Offers</a>
+        <a href="#rewards">Rewards</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="language-btn" id="languageBtn" type="button" aria-label="Language options">ع</button>
+        <button class="btn btn-primary" id="loginBtn" type="button">Login</button>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- CATEGORIES -->
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Explore your cravings</div>
-          <h2>What are you in the mood for?</h2>
-          <p class="section-description">
-            Pick a category to find something delicious.
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">✨ YOUR FOOD, YOUR REWARDS</span>
+          <h1>Good food.<br>Great deals.<br><span>More rewards.</span></h1>
+          <p class="hero-description">
+            Discover tasty meals, explore special offers and enjoy a smarter
+            way to find your next favourite food.
           </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#explore">Explore Food →</a>
+            <a class="btn btn-light" href="#rewards">Discover Rewards</a>
+          </div>
+
+          <p class="hero-note">🍽️ Discover food · 🎁 Explore offers · ⭐ Enjoy rewards</p>
         </div>
 
-        <div class="category-grid" id="categoryGrid">
-          <button class="category-card active" data-category="all">
-            <span class="category-icon">🍽️</span>
-            <span class="category-name">All Food</span>
-          </button>
-          <button class="category-card" data-category="burger">
-            <span class="category-icon">🍔</span>
-            <span class="category-name">Burgers</span>
-          </button>
-          <button class="category-card" data-category="fatira">
-            <span class="category-icon">🫓</span>
-            <span class="category-name">Fatira</span>
-          </button>
-          <button class="category-card" data-category="sandwich">
-            <span class="category-icon">🥪</span>
-            <span class="category-name">Sandwiches</span>
-          </button>
-          <button class="category-card" data-category="drinks">
-            <span class="category-icon">🧃</span>
-            <span class="category-name">Drinks</span>
-          </button>
-          <button class="category-card" data-category="sides">
-            <span class="category-icon">🍟</span>
-            <span class="category-name">Sides</span>
-          </button>
+        <div class="hero-art" aria-label="Burger and reward illustrations">
+          <div class="hero-circle">
+            <span class="hero-food">🍔</span>
+          </div>
+
+          <div class="floating-card floating-card-one">
+            <span class="floating-icon">🎁</span>
+            <span>
+              <strong>Special Offers</strong>
+              <small>Something delicious awaits</small>
+            </span>
+          </div>
+
+          <div class="floating-card floating-card-two">
+            <span class="floating-icon">⭐</span>
+            <span>
+              <strong>Food &amp; Rewards</strong>
+              <small>Discover more with ZADORA</small>
+            </span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOD -->
     <section class="section" id="explore">
       <div class="container">
         <div class="section-heading">
-          <div class="section-label">Popular picks</div>
-          <h2>Something delicious awaits</h2>
-          <p class="section-description">
-            Sample listings for the ZADORA marketplace preview.
-          </p>
+          <div>
+            <h2>Find your favourite food</h2>
+            <p>Explore our sample menu and discover something delicious.</p>
+          </div>
+        </div>
+
+        <form class="search-panel" id="searchForm" role="search">
+          <label class="search-input-wrap">
+            <span aria-hidden="true">🔎</span>
+            <input
+              id="foodSearch"
+              type="search"
+              placeholder="Search burgers, pizza, drinks..."
+              aria-label="Search food"
+            >
+          </label>
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+
+        <div class="category-list" id="categoryList" aria-label="Food categories">
+          <button class="category-btn active" type="button" data-category="All">All Food</button>
+          <button class="category-btn" type="button" data-category="Burgers">🍔 Burgers</button>
+          <button class="category-btn" type="button" data-category="Pizza">🍕 Pizza</button>
+          <button class="category-btn" type="button" data-category="Sandwiches">🥪 Sandwiches</button>
+          <button class="category-btn" type="button" data-category="Drinks">🥤 Drinks</button>
+          <button class="category-btn" type="button" data-category="Desserts">🍰 Desserts</button>
         </div>
 
         <div class="food-grid" id="foodGrid">
-
-          <article class="food-card"
-            data-category="burger"
-            data-search="classic beef burger">
+          <article class="food-card" data-category="Burgers" data-search="classic burger beef burger">
             <div class="food-image">
-              <span class="food-tag">BEST SELLER</span>
-              <span class="food-emoji">🍔</span>
+              <span class="food-tag">Popular</span>
+              <span class="food-emoji" aria-hidden="true">🍔</span>
             </div>
-            <div class="food-details">
-              <div class="food-title-row">
-                <span class="food-name">Classic Beef Burger</span>
-                <span class="food-rating">★ 4.8</span>
-              </div>
-              <div class="food-meta">Burgers · Demo restaurant</div>
+            <div class="food-info">
+              <h3>Classic Burger</h3>
+              <p>A classic burger for a satisfying meal.</p>
               <div class="food-bottom">
                 <span class="food-price">SAR 18</span>
-                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View burger">+</button>
+                <button class="add-btn" type="button" aria-label="View Classic Burger" data-food="Classic Burger">+</button>
               </div>
             </div>
           </article>
 
-          <article class="food-card"
-            data-category="fatira"
-            data-search="cheese fatira flatbread">
+          <article class="food-card" data-category="Pizza" data-search="cheese pizza mozzarella">
             <div class="food-image">
-              <span class="food-tag">LOCAL FAVORITE</span>
-              <span class="food-emoji">🫓</span>
+              <span class="food-tag">Favourite</span>
+              <span class="food-emoji" aria-hidden="true">🍕</span>
             </div>
-            <div class="food-details">
-              <div class="food-title-row">
-                <span class="food-name">Cheese Fatira</span>
-                <span class="food-rating">★ 4.7</span>
-              </div>
-              <div class="food-meta">Fatira · Demo restaurant</div>
+            <div class="food-info">
+              <h3>Cheese Pizza</h3>
+              <p>Cheesy pizza for a delicious bite.</p>
               <div class="food-bottom">
-                <span class="food-price">SAR 8</span>
-                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View fatira">+</button>
+                <span class="food-price">SAR 25</span>
+                <button class="add-btn" type="button" aria-label="View Cheese Pizza" data-food="Cheese Pizza">+</button>
               </div>
             </div>
           </article>
 
-          <article class="food-card"
-            data-category="sandwich"
-            data-search="grilled chicken sandwich">
-            <div class="food-image" style="background:linear-gradient(135deg,#e6f5d7,#bfe2a4)">
-              <span class="food-tag">FRESH PICK</span>
-              <span class="food-emoji">🥪</span>
+          <article class="food-card" data-category="Sandwiches" data-search="chicken sandwich grilled chicken">
+            <div class="food-image">
+              <span class="food-emoji" aria-hidden="true">🥪</span>
             </div>
-            <div class="food-details">
-              <div class="food-title-row">
-                <span class="food-name">Chicken Sandwich</span>
-                <span class="food-rating">★ 4.6</span>
-              </div>
-              <div class="food-meta">Sandwiches · Demo restaurant</div>
-              <div class="food-bottom">
-                <span class="food-price">SAR 14</span>
-                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View sandwich">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="food-card"
-            data-category="drinks"
-            data-search="fresh orange juice">
-            <div class="food-image" style="background:linear-gradient(135deg,#fff1cf,#ffc875)">
-              <span class="food-tag">FRESH DAILY</span>
-              <span class="food-emoji">🍹</span>
-            </div>
-            <div class="food-details">
-              <div class="food-title-row">
-                <span class="food-name">Fresh Orange Juice</span>
-                <span class="food-rating">★ 4.9</span>
-              </div>
-              <div class="food-meta">Drinks · Demo restaurant</div>
-              <div class="food-bottom">
-                <span class="food-price">SAR 7</span>
-                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View juice">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="food-card"
-            data-category="sides"
-            data-search="crispy french fries">
-            <div class="food-image" style="background:linear-gradient(135deg,#fff2c9,#f5cf71)">
-              <span class="food-emoji">🍟</span>
-            </div>
-            <div class="food-details">
-              <div class="food-title-row">
-                <span class="food-name">French Fries</span>
-                <span class="food-rating">★ 4.5</span>
-              </div>
-              <div class="food-meta">Sides · Demo restaurant</div>
-              <div class="food-bottom">
-                <span class="food-price">SAR 6</span>
-                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View fries">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="food-card"
-            data-category="burger"
-            data-search="crispy chicken burger">
-            <div class="food-image" style="background:linear-gradient(135deg,#ffe2d4,#f5b6a0)">
-              <span class="food-emoji">🍗</span>
-            </div>
-            <div class="food-details">
-              <div class="food-title-row">
-                <span class="food-name">Chicken Burger</span>
-                <span class="food-rating">★ 4.7</span>
-              </div>
-              <div class="food-meta">Burgers · Demo restaurant</div>
+            <div class="food-info">
+              <h3>Chicken Sandwich</h3>
+              <p>A tasty sandwich for lunch or a snack.</p>
               <div class="food-bottom">
                 <span class="food-price">SAR 16</span>
-                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View chicken burger">+</button>
+                <button class="add-btn" type="button" aria-label="View Chicken Sandwich" data-food="Chicken Sandwich">+</button>
               </div>
             </div>
           </article>
 
-          <article class="food-card"
-            data-category="drinks"
-            data-search="iced coffee">
-            <div class="food-image" style="background:linear-gradient(135deg,#e8dfd7,#c4a99a)">
-              <span class="food-emoji">🧋</span>
+          <article class="food-card" data-category="Drinks" data-search="fresh orange juice drink">
+            <div class="food-image">
+              <span class="food-tag">Fresh</span>
+              <span class="food-emoji" aria-hidden="true">🍊</span>
             </div>
-            <div class="food-details">
-              <div class="food-title-row">
-                <span class="food-name">Iced Coffee</span>
-                <span class="food-rating">★ 4.6</span>
-              </div>
-              <div class="food-meta">Drinks · Demo restaurant</div>
+            <div class="food-info">
+              <h3>Fresh Orange Juice</h3>
+              <p>A refreshing orange drink.</p>
               <div class="food-bottom">
-                <span class="food-price">SAR 10</span>
-                <button class="add-button" data-message="This is a sample item. Real ordering will be enabled after backend setup." aria-label="View iced coffee">+</button>
+                <span class="food-price">SAR 9</span>
+                <button class="add-btn" type="button" aria-label="View Fresh Orange Juice" data-food="Fresh Orange Juice">+</button>
               </div>
             </div>
           </article>
 
-          <div class="empty-message" id="emptyMessage">
-            No matching items found. Try another search.
-          </div>
+          <article class="food-card" data-category="Desserts" data-search="chocolate cake dessert">
+            <div class="food-image">
+              <span class="food-emoji" aria-hidden="true">🍰</span>
+            </div>
+            <div class="food-info">
+              <h3>Chocolate Cake</h3>
+              <p>A sweet treat for dessert lovers.</p>
+              <div class="food-bottom">
+                <span class="food-price">SAR 14</span>
+                <button class="add-btn" type="button" aria-label="View Chocolate Cake" data-food="Chocolate Cake">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="Burgers" data-search="crispy chicken burger">
+            <div class="food-image">
+              <span class="food-tag">Crispy</span>
+              <span class="food-emoji" aria-hidden="true">🍗</span>
+            </div>
+            <div class="food-info">
+              <h3>Crispy Chicken</h3>
+              <p>A crunchy chicken favourite.</p>
+              <div class="food-bottom">
+                <span class="food-price">SAR 20</span>
+                <button class="add-btn" type="button" aria-label="View Crispy Chicken" data-food="Crispy Chicken">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="Drinks" data-search="iced coffee cold coffee">
+            <div class="food-image">
+              <span class="food-emoji" aria-hidden="true">🧋</span>
+            </div>
+            <div class="food-info">
+              <h3>Iced Coffee</h3>
+              <p>A cool coffee break in every cup.</p>
+              <div class="food-bottom">
+                <span class="food-price">SAR 12</span>
+                <button class="add-btn" type="button" aria-label="View Iced Coffee" data-food="Iced Coffee">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="Sandwiches" data-search="veggie sandwich vegetables">
+            <div class="food-image">
+              <span class="food-emoji" aria-hidden="true">🥙</span>
+            </div>
+            <div class="food-info">
+              <h3>Veggie Wrap</h3>
+              <p>A colourful wrap with a fresh feel.</p>
+              <div class="food-bottom">
+                <span class="food-price">SAR 13</span>
+                <button class="add-btn" type="button" aria-label="View Veggie Wrap" data-food="Veggie Wrap">+</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="empty-state" id="emptyState">No matching food found. Try another search.</p>
+
+        <div style="text-align:center;margin-top:28px">
+          <button class="btn btn-light" id="showAllBtn" type="button">Show All Food</button>
         </div>
       </div>
     </section>
 
-    <!-- OFFERS -->
-    <section class="section" id="offers">
+    <section class="section" id="offers" style="background:var(--cream)">
       <div class="container">
         <div class="section-heading">
-          <div class="section-label">A little extra joy</div>
-          <h2>Offers made for you</h2>
-          <p class="section-description">
-            A preview of the promotions area.
-          </p>
+          <div>
+            <h2>Offers worth exploring</h2>
+            <p>Discover special deals and new food experiences.</p>
+          </div>
         </div>
 
         <div class="offer-grid">
           <article class="offer-card">
-            <div class="offer-content">
-              <div class="offer-label">✦ ZADORA WELCOME</div>
-              <h3>Your next favorite is waiting.</h3>
-              <p>Explore local food spots and discover something new.</p>
-              <button class="offer-button" data-message="Offers will be managed after the marketplace backend is ready.">
-                Explore marketplace ↗
-              </button>
+            <span class="offer-icon">🍔</span>
+            <div>
+              <span class="offer-label">SAMPLE OFFER</span>
+              <h3>Burger Time</h3>
+              <p>Explore burger favourites and find your next meal.</p>
+              <a class="text-link" href="#explore">Explore food →</a>
             </div>
-            <span class="offer-emoji">🥙</span>
           </article>
 
-          <article class="offer-card gold">
-            <div class="offer-content">
-              <div class="offer-label">★ REWARDS PREVIEW</div>
-              <h3>Every order brings you closer.</h3>
-              <p>Points, coupons and member offers are planned for the future.</p>
-              <button class="offer-button" data-message="The rewards program is a design preview and is not active yet.">
-                Discover rewards ↗
-              </button>
+          <article class="offer-card">
+            <span class="offer-icon">🥤</span>
+            <div>
+              <span class="offer-label">SAMPLE OFFER</span>
+              <h3>Refresh Your Day</h3>
+              <p>Discover refreshing drinks for any moment.</p>
+              <a class="text-link" href="#explore">Find drinks →</a>
             </div>
-            <span class="offer-emoji">🎁</span>
+          </article>
+
+          <article class="offer-card">
+            <span class="offer-icon">🎁</span>
+            <div>
+              <span class="offer-label">REWARDS</span>
+              <h3>Something Extra</h3>
+              <p>See how the ZADORA rewards experience is planned.</p>
+              <a class="text-link" href="#rewards">Explore rewards →</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- REWARDS -->
     <section class="section" id="rewards">
       <div class="container">
         <div class="rewards-panel">
-          <div>
-            <div class="section-label" style="color:#82f0dc">
-              A tastier kind of loyalty
-            </div>
-            <h2>Good food. Great rewards.</h2>
+          <div class="rewards-content">
+            <span class="eyebrow">⭐ THE ZADORA EXPERIENCE</span>
+            <h2>More than just food.</h2>
             <p>
-              ZADORA Rewards is planned to bring points, coupons,
-              referral perks and member-only offers into one experience.
+              ZADORA is being designed to bring food discovery, special offers
+              and rewards together in one convenient marketplace.
             </p>
-            <a class="primary-button" href="#how-it-works">
-              See how it works ↗
-            </a>
+            <a class="btn btn-cyan" href="#how-it-works">How It Works</a>
           </div>
-          <div class="reward-coin" aria-hidden="true">✦</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section" id="how-it-works">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Simple by design</div>
-          <h2>Your food journey in three steps</h2>
-        </div>
-
-        <div class="steps-grid">
-          <article class="step-card">
-            <div class="step-number">01</div>
-            <h3>Discover</h3>
-            <p>Explore food categories and local restaurants in one place.</p>
-          </article>
-
-          <article class="step-card">
-            <div class="step-number">02</div>
-            <h3>Choose your favorite</h3>
-            <p>Browse sample menus and find something you love.</p>
-          </article>
-
-          <article class="step-card">
-            <div class="step-number">03</div>
-            <h3>Earn rewards</h3>
-            <p>A future points system will make eligible orders more rewarding.</p>
-          </article>
+          <div class="rewards-art" aria-hidden="true">🎁</div>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- FOOTER -->
-  <footer>
+  <section class="section" id="how-it-works" style="background:var(--cream)">
     <div class="container">
-      <div class="footer-content">
+      <div class="section-heading">
         <div>
-          <a class="brand" href="#home">
+          <h2>How ZADORA works</h2>
+          <p>A simple way to explore the marketplace experience.</p>
+        </div>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card">
+          <div class="step-number">01</div>
+          <h3>Discover</h3>
+          <p>Browse sample food items and explore different categories.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-number">02</div>
+          <h3>Explore Offers</h3>
+          <p>Find featured offers and discover new favourites.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-number">03</div>
+          <h3>Enjoy Rewards</h3>
+          <p>Explore the rewards concept as the marketplace develops.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <a class="brand" href="#home" aria-label="ZADORA Home">
             <span class="brand-mark">Z</span>
             <span>
               <span class="brand-name">ZADORA</span>
-              <span class="brand-caption">FOOD • DEALS • REWARDS</span>
+              <span class="brand-caption">FOOD &amp; REWARDS MARKETPLACE</span>
             </span>
           </a>
-          <p class="footer-note">
-            Discover local food, explore offers and enjoy a new
-            rewards experience. This preview uses sample content
-            while the marketplace is being developed.
+          <p class="footer-description">
+            Discover food, explore offers and enjoy a fresh marketplace experience with ZADORA.
           </p>
         </div>
-
         <nav class="footer-links" aria-label="Footer navigation">
           <a href="#home">Home</a>
-          <a href="#explore">Explore</a>
+          <a href="#explore">Explore Food</a>
           <a href="#offers">Offers</a>
           <a href="#rewards">Rewards</a>
+          <a href="#how-it-works">How It Works</a>
         </nav>
       </div>
-
-      <div class="copyright">
-        © <span id="currentYear"></span> ZADORA.
-        Marketplace preview — sample content only.
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> ZADORA. All rights reserved.</span>
+        <span>Marketplace preview · Sample content</span>
       </div>
     </div>
   </footer>
 
-  <!-- MOBILE NAVIGATION -->
-  <nav class="mobile-navigation" aria-label="Mobile navigation">
-    <a class="active" href="#home">
-      <span>⌂</span><span>Home</span>
-    </a>
-    <a href="#explore">
-      <span>⌕</span><span>Explore</span>
-    </a>
-    <a href="#offers">
-      <span>♡</span><span>Offers</span>
-    </a>
-    <a href="#rewards">
-      <span>✦</span><span>Rewards</span>
-    </a>
-    <a href="#profile" id="profileButton">
-      <span>◉</span><span>Profile</span>
-    </a>
-  </nav>
-
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- JAVASCRIPT -->
   <script>
     (() => {
-      const $ = (selector, root = document) =>
-        root.querySelector(selector);
+      "use strict";
 
-      const $$ = (selector, root = document) =>
-        [...root.querySelectorAll(selector)];
+      const $ = (selector) => document.querySelector(selector);
+      const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
-      const toast = $("#toast");
+      const searchInput = $("#foodSearch");
+      const foodCards = $$(".food-card");
+      const categoryButtons = $$(".category-btn");
+      const emptyState = $("#emptyState");
+      const toastElement = $("#toast");
+
+      let activeCategory = "All";
       let toastTimer;
-      let activeCategory = "all";
 
       function showToast(message) {
-        toast.textContent = message;
-        toast.classList.add("show");
-
-        clearTimeout(toastTimer);
-
-        toastTimer = setTimeout(() => {
-          toast.classList.remove("show");
-        }, 3000);
+        toastElement.textContent = message;
+        toastElement.classList.add("show");
+        window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(() => {
+          toastElement.classList.remove("show");
+        }, 2800);
       }
 
       function filterFoods() {
-        const query = $("#foodSearch").value
-          .trim()
-          .toLowerCase();
-
+        const searchTerm = searchInput.value.trim().toLowerCase();
         let visibleCount = 0;
 
-        $$(".food-card").forEach(card => {
-          const categoryMatches =
-            activeCategory === "all" ||
-            card.dataset.category === activeCategory;
-
+        foodCards.forEach((card) => {
+          const category = card.dataset.category || "";
           const searchableText = (
-            card.dataset.search + " " + card.innerText
+            (card.dataset.search || "") + " " +
+            (card.querySelector("h3")?.textContent || "")
           ).toLowerCase();
 
-          const searchMatches =
-            query === "" || searchableText.includes(query);
+          const matchesCategory =
+            activeCategory === "All" || category === activeCategory;
+          const matchesSearch = searchableText.includes(searchTerm);
+          const isVisible = matchesCategory && matchesSearch;
 
-          const show = categoryMatches && searchMatches;
-
-          card.style.display = show ? "" : "none";
-
-          if (show) visibleCount++;
+          card.hidden = !isVisible;
+          if (isVisible) visibleCount += 1;
         });
 
-        $("#emptyMessage").style.display =
-          visibleCount ? "none" : "block";
+        emptyState.style.display = visibleCount === 0 ? "block" : "none";
       }
 
-      $("#categoryGrid").addEventListener("click", event => {
-        const button = event.target.closest("[data-category]");
-
-        if (!button) return;
-
-        activeCategory = button.dataset.category;
-
-        $$(".category-card").forEach(card => {
-          card.classList.toggle("active", card === button);
-        });
-
-        filterFoods();
-      });
-
-      $("#searchForm").addEventListener("submit", event => {
+      $("#searchForm").addEventListener("submit", (event) => {
         event.preventDefault();
         filterFoods();
-
         $("#explore").scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
       });
 
-      $("#foodSearch").addEventListener("input", filterFoods);
+      searchInput.addEventListener("input", filterFoods);
 
-      document.addEventListener("click", event => {
-        const button = event.target.closest("[data-message]");
+      categoryButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          activeCategory = button.dataset.category || "All";
 
-        if (!button) return;
-
-        event.preventDefault();
-        showToast(button.dataset.message);
-      });
-
-      $("#languageButton").addEventListener("click", () => {
-        showToast(
-          "Arabic interface is planned for a future update. The current preview is in English."
-        );
-      });
-
-      $("#profileButton").addEventListener("click", event => {
-        event.preventDefault();
-
-        showToast(
-          "Customer profile will be enabled after login and backend setup."
-        );
-      });
-
-      $$(".mobile-navigation a").forEach(link => {
-        link.addEventListener("click", () => {
-          $$(".mobile-navigation a").forEach(item => {
-            item.classList.toggle("active", item === link);
+          categoryButtons.forEach((item) => {
+            const isActive = item === button;
+            item.classList.toggle("active", isActive);
+            item.setAttribute("aria-pressed", String(isActive));
           });
+
+          filterFoods();
         });
+
+        button.setAttribute(
+          "aria-pressed",
+          String(button.dataset.category === "All")
+        );
+      });
+
+      $("#showAllBtn").addEventListener("click", () => {
+        searchInput.value = "";
+        activeCategory = "All";
+
+        categoryButtons.forEach((button) => {
+          const isActive = button.dataset.category === "All";
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        filterFoods();
+      });
+
+      $$(".add-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          showToast(
+            (button.dataset.food || "This item") +
+            " is a sample item. Ordering is not enabled yet."
+          );
+        });
+      });
+
+      $("#loginBtn").addEventListener("click", () => {
+        showToast("Account login will be available in a future version.");
+      });
+
+      $("#languageBtn").addEventListener("click", () => {
+        showToast("Arabic language support is planned for a future version.");
       });
 
       $("#currentYear").textContent = new Date().getFullYear();
