@@ -9,17 +9,17 @@
 
   <style>
     :root {
-      --green: #103b36;
-      --green-light: #1d554b;
-      --cyan: #45d6c3;
-      --cream: #fffaf0;
-      --white: #ffffff;
-      --text: #19332f;
-      --muted: #71817b;
-      --orange: #ffb85c;
-      --border: #e8eee8;
-      --shadow: 0 12px 35px rgba(16, 59, 54, 0.08);
-    }
+  --green: #103b36;
+  --green-light: #1d554b;
+  --cyan: #45d6c3;
+  --cream: #D4F3EF;
+  --white: #ffffff;
+  --text: #19332f;
+  --muted: #71817b;
+  --orange: #ffb85c;
+  --border: #CDE8E3;
+  --shadow: 0 12px 35px rgba(16, 59, 54, 0.08);
+}
 
     * {
       box-sizing: border-box;
@@ -33,7 +33,7 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--white);
+      background: #E8FAF8;
       color: var(--text);
       line-height: 1.6;
     }
@@ -879,6 +879,70 @@
   .footer-main,
   .footer-bottom {
     flex-direction: column;
+  }
+}
+    .marketplace-promo {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 8px 0;
+  padding: 28px;
+  border-radius: 22px;
+  background: #103B36;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.promo-copy {
+  max-width: 440px;
+}
+
+.promo-kicker {
+  color: #45D6C3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.promo-copy h2 {
+  margin: 9px 0;
+  font-size: clamp(25px, 4vw, 36px);
+  line-height: 1.15;
+}
+
+.promo-copy p {
+  margin: 0 0 17px;
+  color: #D0E1DC;
+  font-size: 13px;
+}
+
+.promo-art {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background: rgba(69, 214, 195, 0.15);
+  font-size: 66px;
+}
+
+@media (max-width: 700px) {
+  .marketplace-promo {
+    padding: 20px 16px;
+    gap: 8px;
+  }
+
+  .promo-art {
+    width: 75px;
+    height: 75px;
+    font-size: 43px;
+  }
+
+  .promo-copy h2 {
+    font-size: 25px;
   }
 }
   </style>
