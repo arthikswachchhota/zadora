@@ -886,12 +886,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin: 8px 0;
-  padding: 28px;
-  border-radius: 22px;
-  background: #103B36;
-  color: #FFFFFF;
+  gap: 12px;
+  margin: 4px 0;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: #103b36;
+  color: #ffffff;
   overflow: hidden;
 }
 
@@ -900,49 +900,60 @@
 }
 
 .promo-kicker {
-  color: #45D6C3;
-  font-size: 10px;
+  color: #45d6c3;
+  font-size: 9px;
   font-weight: 800;
-  letter-spacing: 1.4px;
+  letter-spacing: 1px;
 }
 
 .promo-copy h2 {
-  margin: 9px 0;
-  font-size: clamp(25px, 4vw, 36px);
-  line-height: 1.15;
+  margin: 5px 0;
+  font-size: clamp(20px, 2.5vw, 27px);
+  line-height: 1.2;
 }
 
 .promo-copy p {
-  margin: 0 0 17px;
-  color: #D0E1DC;
-  font-size: 13px;
+  margin: 0 0 10px;
+  color: #d0e1dc;
+  font-size: 12px;
+}
+
+.marketplace-promo .btn {
+  min-height: 34px;
+  padding: 7px 12px;
+  font-size: 12px;
 }
 
 .promo-art {
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  width: 115px;
-  height: 115px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background: rgba(69, 214, 195, 0.15);
-  font-size: 66px;
+  font-size: 42px;
 }
 
 @media (max-width: 700px) {
   .marketplace-promo {
-    padding: 20px 16px;
-    gap: 8px;
-  }
-
-  .promo-art {
-    width: 75px;
-    height: 75px;
-    font-size: 43px;
+    padding: 15px 12px;
+    gap: 6px;
+    border-radius: 14px;
   }
 
   .promo-copy h2 {
-    font-size: 25px;
+    font-size: 19px;
+  }
+
+  .promo-copy p {
+    font-size: 11px;
+  }
+
+  .promo-art {
+    width: 52px;
+    height: 52px;
+    font-size: 30px;
   }
 }
   </style>
