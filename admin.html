@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#082b28">
+<title>Bufia Zamzam | Admin</title>
+<style>
+:root{--bg:#061f1d;--panel:#103b36;--line:#28584f;--accent:#00c2b8;--text:#f4fffc;--muted:#b6d0ca}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px Arial,sans-serif}
+header{padding:20px;background:#082b28;border-bottom:1px solid var(--line)}
+header h1{font-size:22px;margin:0 0 5px}
+header p{margin:0;color:var(--muted);font-size:13px}
+main{max-width:850px;margin:auto;padding:18px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:17px;margin-bottom:17px}
+h2{font-size:19px;margin-top:0}
+label{display:block;font-size:13px;color:var(--muted);margin:13px 0 6px}
+input{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:#061f1d;color:white;font-size:16px}
+button,.btn{display:inline-block;border:0;border-radius:9px;padding:12px 15px;background:var(--accent);color:#042522;font-weight:bold;font-size:14px;cursor:pointer;text-decoration:none}
+.secondary{background:#1b5148;color:white;border:1px solid var(--line)}
+.food{padding:14px 0;border-bottom:1px solid var(--line)}
+.food:last-child{border-bottom:0}
+.food h3{font-size:16px;margin:0 0 8px}
+.preview{width:100%;max-width:190px;height:120px;object-fit:cover;border-radius:9px;display:block;margin:10px 0;background:#082b28}
+.note{font-size:13px;line-height:1.6;color:var(--muted)}
+#message{color:#a7f3d0;font-size:14px;white-space:pre-wrap}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+</style>
+</head>
+<body>
+<header>
+<h1>BUFIA ZAMZAM — Admin</h1>
+<p>Food menu editor • Umm Al-Salam, Jeddah</p>
+</header>
+<main>
+<section class="panel">
+<h2>Food Menu Manager</h2>
+<p class="note">Edit food names, prices and image URLs. Preview changes before preparing them for the live website.</p>
+<div id="foods"></div>
+<div class="actions">
+<button onclick="addFood()">+ Add Food</button>
+<button class="secondary" onclick="previewMenu()">Preview Menu</button>
+<button class="secondary" onclick="exportMenu()">Download Menu Data</button>
+</div>
+<p id="message" role="status"></p>
+</section>
+
+<section class="panel">
+<h2>Website QR Code</h2>
+<p class="note">The QR image should be uploaded to images/qr-code.png in this repository.</p>
+<img id="qrPreview" class="preview" src="images/qr-code.png" alt="Bufia Zamzam QR preview">
+<a class="btn secondary" href="index.html">Open Website</a>
+</section>
+
+<section class="panel">
+<h2>Important</h2>
+<p class="note">This is an editor preview, not a secured login system. Changes made here are not automatically published to the public website. Do not enter passwords, API secret keys or private customer information.</p>
+</section>
+</main>
+<script>
+const initialFoods=[
+{name:"Hamburger Mini",price:"6",image:""},
+{name:"Fatira",price:"5",image:""},
+{name:"Sandwich",price:"5",image:""},
+{name:"Fresh Juice",price:"6",image:""},
+{name:"Boiled Egg",price:"2",image:""},
+{name:"Milk Tea",price:"2",image:""},
+{name:"chicken Sharma",price:"3",image:""},
+{name:"Kolixza vuna",price:"3",image:""},
+{name:"Taameya",price:"6",image:""},
+{name:"Cold drinks",price:"0",image:""},
+{name:"chicken burger",price:"8.5",image:""},
+{name:"Shingara",price:"1",image:""}
+];
+let menu=initialFoods.map(item=>({...item}));
+
+function render(){
+const root=document.getElementById("foods");
+root.innerHTML="";
+menu.forEach((food,i)=>{
+const section=document.createElement("div");
+section.className="food";
+const heading=document.createElement("h3");
+heading.textContent=(i+1)+". "+food.name;
+section.appendChild(heading);
+
+const nameLabel=document.createElement("label");
+nameLabel.textContent="Food name";
+const name=document.createElement("input");
+name.value=food.name;
+name.autocomplete="off";
+name.addEventListener("input",()=>{menu[i].name=name.value;heading.textContent=(i+1)+". "+name.value});
+section.append(nameLabel,name);
+
+const priceLabel=document.createElement("label");
+priceLabel.textContent="Price (SAR)";
+const price=document.createElement("input");
+price.type="number";price.min="0";price.step="0.01";price.value=food.price;
+price.addEventListener("input",()=>menu[i].price=price.value);
+section.append(priceLabel,price);
+
+const imageLabel=document.createElement("label");
+imageLabel.textContent="Image URL (optional)";
+const image=document.createElement("input");
+image.type="url";image.placeholder="https://example.com/food.jpg";
+image.value=food.image;
+image.autocomplete="url";
+image.addEventListener("input",()=>{
+menu[i].image=image.value;
+const value=image.value.trim();
+if(value.startsWith("https://")||value.startsWith("http://")){photo.src=value;photo.style.display="block"}
+else{photo.removeAttribute("src");photo.style.display="none"}
+});
+section.append(imageLabel,image);
+
+const photo=document.createElement("img");
+photo.className="preview";
+photo.alt=food.name+" preview";
+photo.style.display=food.image?"block":"none";
+if(food.image)photo.src=food.image;
+photo.onerror=()=>{photo.style.display="none"};
+section.appendChild(photo);
+root.appendChild(section);
+});
+}
+
+function addFood(){
+menu.push({name:"New Food",price:"0",image:""});
+render();
+document.getElementById("message").textContent="New food row added to this preview.";
+}
+
+function previewMenu(){
+const invalid=menu.some(f=>!f.name.trim()||f.price===""||Number(f.price)<0);
+if(invalid){document.getElementById("message").textContent="Please enter a food name and a valid price for every item.";return}
+sessionStorage.setItem("bufiaMenuPreview",JSON.stringify(menu));
+document.getElementById("message").textContent="Preview data prepared. This does not publish changes to the live website.";
+}
+
+function exportMenu(){
+const blob=new Blob([JSON.stringify(menu,null,2)],{type:"application/json"});
+const url=URL.createObjectURL(blob);
+const link=document.createElement("a");
+link.href=url;link.download="bufia-menu.json";
+document.body.appendChild(link);link.click();link.remove();
+URL.revokeObjectURL(url);
+document.getElementById("message").textContent="Menu data download requested. This file does not update the live site automatically.";
+}
+render();
+</script>
+</body>
+</html>
