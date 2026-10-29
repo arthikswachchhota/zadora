@@ -6,112 +6,335 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#082b28">
 <title>Bufia Zamzam | Umm Al-Salam, Jeddah</title>
+
 <style>
 :root {
-  --bg:#061f1d;
-  --panel:#103b36;
-  --panel2:#164940;
-  --accent:#00c2b8;
-  --text:#f4fffc;
-  --muted:#b6d0ca;
-  --border:#28584f;
+  --green: #082b28;
+  --green2: #103b36;
+  --teal: #00b7a8;
+  --gold: #f4c95d;
+  --bg: #ffffff;
+  --text: #123b35;
+  --muted: #62746f;
+  --border: #e2e9e6;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;line-height:1.6
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
 }
-button,a{font:inherit}
-a{color:inherit;text-decoration:none}
-.topbar{
-  background:#041715;text-align:center;padding:8px 12px;
-  color:var(--muted);font-size:13px
+
+button, a { font: inherit; }
+a { color: inherit; text-decoration: none; }
+
+.topbar {
+  background: #041715;
+  color: #d1e6df;
+  text-align: center;
+  padding: 6px 10px;
+  font-size: 12px;
 }
-header{
-  position:sticky;top:0;z-index:5;background:#082b28;
-  border-bottom:1px solid var(--border)
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--green);
+  border-bottom: 1px solid #24554c;
 }
-.nav{
-  max-width:1100px;margin:auto;padding:14px 18px;
-  display:flex;align-items:center;justify-content:space-between;gap:12px
+
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
-.brand{font-size:21px;font-weight:900;letter-spacing:1px;color:var(--accent)}
-.languages{display:flex;gap:6px}
-.languages button,.btn{
-  border:1px solid var(--border);border-radius:10px;
-  padding:9px 12px;background:var(--panel);color:var(--text);
-  cursor:pointer
+
+.brand {
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  white-space: nowrap;
 }
-.languages button.active{background:var(--accent);color:#042522}
-.hero{
-  max-width:1100px;margin:auto;padding:64px 20px 50px;
-  text-align:center
+
+.languages {
+  display: flex;
+  gap: 5px;
 }
-.eyebrow{color:var(--accent);font-weight:bold;letter-spacing:2px;font-size:13px}
-h1{font-size:clamp(34px,7vw,58px);line-height:1.12;margin:15px 0}
-.hero p,.section-intro{color:var(--muted);max-width:620px;margin:12px auto 24px}
-.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.btn.primary{background:var(--accent);color:#042522;font-weight:bold;border-color:var(--accent)}
-.status{
-  display:inline-block;margin-top:24px;padding:7px 13px;
-  border:1px solid var(--border);border-radius:30px;color:#b9f5d8;
-  background:var(--panel);font-size:13px
+
+.languages button {
+  border: 1px solid #38645c;
+  border-radius: 7px;
+  padding: 6px 9px;
+  background: #103b36;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
 }
-section{padding:36px 18px}
-.section-inner{max-width:1100px;margin:auto}
-.section-title{text-align:center;font-size:29px;margin:0 0 6px}
-.section-intro{text-align:center;margin-bottom:25px}
-.food-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.food-card{
-  overflow:hidden;background:var(--panel);border:1px solid var(--border);
-  border-radius:16px
+
+.languages button.active {
+  background: var(--teal);
+  color: #062b27;
+  border-color: var(--teal);
 }
-.food-photo{
-  width:100%;height:155px;object-fit:cover;display:block;
-  background:#174a42
+
+.hero {
+  background:
+    radial-gradient(ellipse at 85% 20%, #16554a 0%, transparent 40%),
+    linear-gradient(125deg, #041e1b, #0a3932);
+  color: white;
+  padding: 43px 18px 38px;
+  text-align: center;
 }
-.food-placeholder{
-  height:155px;display:flex;align-items:center;justify-content:center;
-  font-size:42px;background:linear-gradient(135deg,#164940,#082b28)
+
+.hero-inner {
+  max-width: 900px;
+  margin: auto;
 }
-.food-info{padding:14px}
-.food-info h3{font-size:16px;margin:0 0 7px}
-.price{font-weight:bold;color:var(--accent)}
-.about-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.info-card{
-  padding:22px;border-radius:16px;background:var(--panel);
-  border:1px solid var(--border)
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
-.info-card h3{margin-top:0;color:var(--accent)}
-.info-card p{color:var(--muted)}
-.qr-wrap{text-align:center}
-.qr-image{
-  display:block;width:min(240px,75%);height:auto;margin:18px auto;
-  background:#fff;border-radius:12px;padding:10px
+
+h1 {
+  font-size: clamp(30px, 6vw, 48px);
+  line-height: 1.15;
+  margin: 10px 0;
 }
-footer{
-  text-align:center;padding:25px 15px;border-top:1px solid var(--border);
-  color:var(--muted);font-size:13px
+
+.hero p {
+  color: #d7e7e2;
+  max-width: 600px;
+  margin: 10px auto 18px;
+  font-size: 14px;
 }
-.small{font-size:13px;color:var(--muted)}
-[dir="rtl"]{text-align:right}
-[dir="rtl"] .nav{flex-direction:row}
-@media(max-width:650px){
-  .food-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .food-photo,.food-placeholder{height:120px}
-  .food-info{padding:11px}
-  .food-info h3{font-size:14px}
-  .about-grid{grid-template-columns:1fr}
-  .nav{padding:12px}
-  .brand{font-size:17px}
-  .languages button{padding:7px;font-size:12px}
-  .hero{padding-top:45px}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid #7baca0;
+  border-radius: 8px;
+  padding: 9px 13px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #042622;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 17px;
+  color: #d2e9e1;
+  font-size: 12px;
+}
+
+section {
+  padding: 27px 12px;
+  background: white;
+}
+
+.section-inner {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 27px;
+  line-height: 1.2;
+  margin: 0 0 5px;
+  color: var(--green);
+  font-weight: 800;
+}
+
+.section-intro {
+  text-align: center;
+  color: var(--muted);
+  margin: 5px auto 19px;
+  font-size: 13px;
+}
+
+/* Three compact food cards per row, including on phones */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.food-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(5, 45, 36, .045);
+  text-align: center;
+}
+
+.food-placeholder {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fbf9;
+  font-size: 36px;
+}
+
+.food-photo {
+  display: block;
+  width: 100%;
+  height: 82px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.food-info {
+  padding: 7px 3px 8px;
+}
+
+.food-info h3 {
+  margin: 0 0 5px;
+  font-size: 12px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  color: #123b35;
+}
+
+.price {
+  display: inline-block;
+  background: var(--green2);
+  color: white;
+  padding: 4px 8px;
+  min-width: 48px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+#about, #qr {
+  background: #fff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.info-card {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.info-card h3 {
+  color: var(--green);
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.info-card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+}
+
+.info-card a:not(.btn) {
+  color: #087e70;
+  font-weight: bold;
+}
+
+.info-card .btn {
+  margin-top: 7px;
+  color: white;
+  background: var(--green2);
+  border-color: var(--green2);
+}
+
+.qr-wrap { text-align: center; }
+
+.qr-image {
+  display: block;
+  width: min(190px, 70%);
+  height: auto;
+  margin: 14px auto;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 7px;
+}
+
+.small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+footer {
+  background: var(--green);
+  color: #d1e6df;
+  text-align: center;
+  padding: 19px 12px;
+  font-size: 12px;
+}
+
+[dir="rtl"] { text-align: right; }
+
+@media (min-width: 700px) {
+  .food-grid { gap: 14px; }
+  .food-placeholder, .food-photo { height: 125px; }
+  .food-info { padding: 10px 7px; }
+  .food-info h3 { font-size: 15px; }
+  .price { font-size: 12px; }
+  section { padding: 34px 18px; }
+}
+
+@media (max-width: 360px) {
+  .nav { padding: 10px 8px; gap: 5px; }
+  .brand { font-size: 15px; }
+  .languages { gap: 3px; }
+  .languages button { padding: 6px 5px; font-size: 11px; }
+  .food-grid { gap: 6px; }
+  .food-placeholder, .food-photo { height: 68px; }
+  .food-placeholder { font-size: 29px; }
+  .food-info h3 { font-size: 11px; }
+  .food-info { padding: 6px 2px; }
+  .price { font-size: 10px; padding: 4px 5px; }
 }
 </style>
 </head>
+
 <body>
 <div class="topbar" data-i18n="top">Fresh food • Umm Al-Salam • Jeddah</div>
+
 <header>
   <nav class="nav">
     <a class="brand" href="#">BUFIA ZAMZAM</a>
@@ -125,14 +348,16 @@ footer{
 
 <main>
   <section class="hero">
-    <div class="eyebrow" data-i18n="eyebrow">FRESH • SIMPLE • FAMILIAR</div>
-    <h1 data-i18n="welcome">WELCOME TO<br>Bufia Zamzam</h1>
-    <p data-i18n="description">A local Bufia serving fresh and familiar favorites in Umm Al-Salam, Jeddah.</p>
-    <div class="actions">
-      <a class="btn primary" href="https://wa.me/966538491649" data-i18n="order">Order on WhatsApp</a>
-      <a class="btn" href="#food" data-i18n="gallery">View Gallery</a>
+    <div class="hero-inner">
+      <div class="eyebrow" data-i18n="eyebrow">FRESH • SIMPLE • FAMILIAR</div>
+      <h1 data-i18n="welcome">WELCOME TO<br>Bufia Zamzam</h1>
+      <p data-i18n="description">A local Bufia serving fresh and familiar favorites in Umm Al-Salam, Jeddah.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://wa.me/966538491649" data-i18n="order">Order on WhatsApp</a>
+        <a class="btn" href="#food" data-i18n="gallery">View Gallery</a>
+      </div>
+      <div class="status" data-i18n="today">● Today — Contact us for opening hours</div>
     </div>
-    <div class="status" data-i18n="today">● Today — Contact us for opening hours</div>
   </section>
 
   <section id="food">
@@ -194,86 +419,120 @@ const foods = [
 
 const translations = {
  en:{
-  top:"Fresh food • Umm Al-Salam • Jeddah",eyebrow:"FRESH • SIMPLE • FAMILIAR",
+  top:"Fresh food • Umm Al-Salam • Jeddah",
+  eyebrow:"FRESH • SIMPLE • FAMILIAR",
   welcome:"WELCOME TO<br>Bufia Zamzam",
   description:"A local Bufia serving fresh and familiar favorites in Umm Al-Salam, Jeddah.",
-  order:"Order on WhatsApp",gallery:"View Gallery",today:"● Today — Contact us for opening hours",
-  ourfood:"OUR FOOD",taste:"A taste of Zamzam",abouttitle:"About Us",
+  order:"Order on WhatsApp",gallery:"View Gallery",
+  today:"● Today — Contact us for opening hours",
+  ourfood:"OUR FOOD",taste:"A taste of Zamzam",
+  abouttitle:"About Us",
   aboutintro:"Fresh and familiar favorites for our local community.",
-  hours:"Opening Hours",morning:"Morning: 1:33 PM – 12:00 PM",
-  evening:"Evening: 4:00 PM – 12:40 AM",break:"Break: 12:00 PM – 4:00 PM",
-  contact:"Contact & Location",maps:"Open Apple Maps",scan:"Scan Our QR Code",
-  scanintro:"Scan to open Bufia Zamzam online.",currency:"SAR"
+  hours:"Opening Hours",
+  morning:"Morning: 1:33 PM – 12:00 PM",
+  evening:"Evening: 4:00 PM – 12:40 AM",
+  break:"Break: 12:00 PM – 4:00 PM",
+  contact:"Contact & Location",maps:"Open Apple Maps",
+  scan:"Scan Our QR Code",
+  scanintro:"Scan to open Bufia Zamzam online.",
+  currency:"SAR"
  },
  ar:{
-  top:"طعام طازج • أم السلام • جدة",eyebrow:"طازج • بسيط • مألوف",
+  top:"طعام طازج • أم السلام • جدة",
+  eyebrow:"طازج • بسيط • مألوف",
   welcome:"أهلاً بكم في<br>بوفيه زمزم",
   description:"بوفيه محلي يقدم الأطعمة الطازجة والمفضلة في أم السلام، جدة.",
-  order:"اطلب عبر واتساب",gallery:"عرض الطعام",today:"● اليوم — تواصل معنا لمعرفة ساعات العمل",
-  ourfood:"قائمة الطعام",taste:"نكهة زمزم",abouttitle:"من نحن",
+  order:"اطلب عبر واتساب",gallery:"عرض الطعام",
+  today:"● اليوم — تواصل معنا لمعرفة ساعات العمل",
+  ourfood:"قائمة الطعام",taste:"نكهة زمزم",
+  abouttitle:"من نحن",
   aboutintro:"أطعمة طازجة ومألوفة لمجتمعنا المحلي.",
-  hours:"ساعات العمل",morning:"الفترة الصباحية: 1:33 م – 12:00 م",
-  evening:"الفترة المسائية: 4:00 م – 12:40 ص",break:"استراحة: 12:00 م – 4:00 م",
-  contact:"التواصل والموقع",maps:"افتح خرائط Apple",scan:"امسح رمز QR",
-  scanintro:"امسح الرمز لفتح بوفيه زمزم عبر الإنترنت.",currency:"ر.س"
+  hours:"ساعات العمل",
+  morning:"الفترة الصباحية: 1:33 م – 12:00 م",
+  evening:"الفترة المسائية: 4:00 م – 12:40 ص",
+  break:"استراحة: 12:00 م – 4:00 م",
+  contact:"التواصل والموقع",maps:"افتح خرائط Apple",
+  scan:"امسح رمز QR",
+  scanintro:"امسح الرمز لفتح بوفيه زمزم عبر الإنترنت.",
+  currency:"ر.س"
  },
  bn:{
-  top:"তাজা খাবার • উম্ম আল-সালাম • জেদ্দা",eyebrow:"তাজা • সহজ • পরিচিত",
+  top:"তাজা খাবার • উম্ম আল-সালাম • জেদ্দা",
+  eyebrow:"তাজা • সহজ • পরিচিত",
   welcome:"স্বাগতম<br>বুফিয়া জমজমে",
   description:"জেদ্দার উম্ম আল-সালামে স্থানীয় পছন্দের তাজা খাবারের বুফিয়া।",
-  order:"WhatsApp-এ অর্ডার",gallery:"খাবার দেখুন",today:"● আজ — খোলার সময় জানতে যোগাযোগ করুন",
-  ourfood:"আমাদের খাবার",taste:"জমজমের স্বাদ",abouttitle:"আমাদের সম্পর্কে",
+  order:"WhatsApp-এ অর্ডার",gallery:"খাবার দেখুন",
+  today:"● আজ — খোলার সময় জানতে যোগাযোগ করুন",
+  ourfood:"আমাদের খাবার",taste:"জমজমের স্বাদ",
+  abouttitle:"আমাদের সম্পর্কে",
   aboutintro:"আমাদের স্থানীয় কমিউনিটির জন্য তাজা ও পরিচিত খাবার।",
-  hours:"খোলার সময়",morning:"সকাল: দুপুর ১:৩৩ – দুপুর ১২:০০",
-  evening:"সন্ধ্যা: বিকেল ৪:০০ – রাত ১২:৪০",break:"বিরতি: দুপুর ১২:০০ – বিকেল ৪:০০",
-  contact:"যোগাযোগ ও ঠিকানা",maps:"Apple Maps খুলুন",scan:"QR কোড স্ক্যান করুন",
-  scanintro:"অনলাইনে বুফিয়া জমজম খুলতে স্ক্যান করুন।",currency:"SAR"
+  hours:"খোলার সময়",
+  morning:"সকাল: দুপুর ১:৩৩ – দুপুর ১২:০০",
+  evening:"সন্ধ্যা: বিকেল ৪:০০ – রাত ১২:৪০",
+  break:"বিরতি: দুপুর ১২:০০ – বিকেল ৪:০০",
+  contact:"যোগাযোগ ও ঠিকানা",maps:"Apple Maps খুলুন",
+  scan:"QR কোড স্ক্যান করুন",
+  scanintro:"অনলাইনে বুফিয়া জমজম খুলতে স্ক্যান করুন।",
+  currency:"SAR"
  }
 };
 
-let currentLanguage="en";
+let currentLanguage = "en";
 
-function setLanguage(language){
- currentLanguage=language;
- document.documentElement.lang=language;
- document.documentElement.dir=language==="ar"?"rtl":"ltr";
- document.querySelectorAll("[data-i18n]").forEach(el=>{
-  const key=el.dataset.i18n;
-  if(translations[language][key]) el.innerHTML=translations[language][key];
- });
- document.querySelectorAll(".languages button").forEach(btn=>{
-  btn.classList.toggle("active",
-   (language==="en"&&btn.textContent==="EN")||
-   (language==="ar"&&btn.textContent==="العربية")||
-   (language==="bn"&&btn.textContent==="বাংলা"));
- });
- renderFoods();
+function setLanguage(language) {
+  currentLanguage = language;
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (translations[language][key]) {
+      el.innerHTML = translations[language][key];
+    }
+  });
+
+  document.querySelectorAll(".languages button").forEach(btn => {
+    btn.classList.toggle(
+      "active",
+      (language === "en" && btn.textContent === "EN") ||
+      (language === "ar" && btn.textContent === "العربية") ||
+      (language === "bn" && btn.textContent === "বাংলা")
+    );
+  });
+
+  renderFoods();
 }
 
-function renderFoods(){
- const grid=document.getElementById("foodGrid");
- grid.innerHTML="";
- foods.forEach((food,index)=>{
-  const card=document.createElement("article");
-  card.className="food-card";
-  const placeholder=document.createElement("div");
-  placeholder.className="food-placeholder";
-  placeholder.textContent=food.emoji;
-  placeholder.id="foodImage"+index;
-  card.appendChild(placeholder);
-  const info=document.createElement("div");
-  info.className="food-info";
-  const name=document.createElement("h3");
-  name.textContent=food.name;
-  const price=document.createElement("div");
-  price.className="price";
-  price.textContent=translations[currentLanguage].currency+" "+food.price;
-  info.append(name,price);
-  card.appendChild(info);
-  grid.appendChild(card);
- });
+function renderFoods() {
+  const grid = document.getElementById("foodGrid");
+  grid.innerHTML = "";
+
+  foods.forEach(food => {
+    const card = document.createElement("article");
+    card.className = "food-card";
+
+    const placeholder = document.createElement("div");
+    placeholder.className = "food-placeholder";
+    placeholder.textContent = food.emoji;
+    card.appendChild(placeholder);
+
+    const info = document.createElement("div");
+    info.className = "food-info";
+
+    const name = document.createElement("h3");
+    name.textContent = food.name;
+
+    const price = document.createElement("div");
+    price.className = "price";
+    price.textContent = translations[currentLanguage].currency + " " + food.price;
+
+    info.append(name, price);
+    card.appendChild(info);
+    grid.appendChild(card);
+  });
 }
-document.getElementById("year").textContent=new Date().getFullYear();
+
+document.getElementById("year").textContent = new Date().getFullYear();
 renderFoods();
 </script>
 </body>
