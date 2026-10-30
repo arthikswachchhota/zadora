@@ -181,21 +181,30 @@ section {
   font-size: 13px;
 }
 
-/* Three compact food cards per row, including on phones */
+/* FOOD GRID - 3 ROWS WITH HORIZONTAL SCROLL */
+
 .food-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-columns: calc((100% - 18px) / 3);
   gap: 9px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .food-card {
   min-width: 0;
   overflow: hidden;
-  background: #103b36;
-  border: 1px solid #28584f;
+  background: #ffffff;
+  border: 1px solid #e2e9e6;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(5, 45, 36, .12);
   text-align: center;
+  scroll-snap-align: start;
 }
 
 .food-placeholder {
@@ -203,7 +212,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #164940;
+  background: #ffffff;
   font-size: 36px;
 }
 
@@ -212,11 +221,12 @@ section {
   width: 100%;
   height: 82px;
   object-fit: contain;
-  background: #fff;
+  background: #ffffff;
 }
 
 .food-info {
   padding: 7px 3px 8px;
+  background: #103b36;
 }
 
 .food-info h3 {
@@ -229,8 +239,8 @@ section {
 
 .price {
   display: inline-block;
-  background: var(--green2);
-  color: white;
+  background: #ffffff;
+  color: #103b36;
   padding: 4px 8px;
   min-width: 48px;
   border-radius: 20px;
@@ -251,12 +261,13 @@ section {
 }
 
 .info-card {
-  background: #ffffff;
-  border: 1px solid #e2e9e6;
+  background: #dff7f4;
+  border: 1px solid #b8e5df;
   border-radius: 12px;
   padding: 12px;
   box-shadow: 0 3px 10px rgba(16, 59, 54, 0.08);
   text-align: center;
+  color: #103b36;
 }
 
 .info-card h3 {
